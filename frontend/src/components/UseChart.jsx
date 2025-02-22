@@ -11,8 +11,8 @@ function UseChart({ totalExpense, onEditBudget }) {
       <div className="relative w-4/5 mx-auto">
         <PieChart
           data={[
-            { title: "Витрати", value: totalExpense, color: "#F9A11B" },
-            { title: "Залишок бюджету", value: remainingBudget > 0 ? remainingBudget : 0, color: "#2A306E" }
+            { title: "Витрати", value: totalExpense, color: "#FF4D4D" },
+            { title: "Залишок бюджету", value: remainingBudget > 0 ? remainingBudget : 0, color: "#28A745" }
           ]}
           labelStyle={{ fontSize: "5px", fontFamily: "sans-serif", fill: "#fff" }}
           radius={42}
@@ -31,19 +31,19 @@ function UseChart({ totalExpense, onEditBudget }) {
       </div>
       <div className="flex text-gray-900 border-b pb-3 justify-center mt-2 space-x-4">
         <div className="flex items-center">
-          <div className="w-4 h-4 mr-2 bg-[#F9A11B]"></div>
-          <span>Витрати</span>
+          <div className="w-4 h-4 mr-2 bg-[#FF4D4D]"></div>
+          <span className="text-red-500">Витрати</span>
         </div>
         <div className="flex items-center">
-          <div className="w-4 h-4 mr-2 bg-[#2A306E]"></div>
-          <span>Залишок бюджету</span>
+          <div className="w-4 h-4 mr-2 bg-[#28A745]"></div>
+          <span className="text-green-500">Залишок бюджету</span>
         </div>
       </div>
-      <ul className="font-bold list-none text-md text-blue-600 flex justify-between mt-4 px-4">
-        <li>
+      <ul className="font-bold list-none text-md flex justify-between mt-4 px-4">
+        <li className="text-red-500">
           ВИТРАТИ <h2 className="text-gray-900 text-xl">₴{totalExpense}</h2>
         </li>
-        <li>
+        <li className="text-green-500">
           ЗАЛИШОК <h3 className="text-gray-900 text-xl">₴{remainingBudget > 0 ? remainingBudget : 0}</h3>
         </li>
       </ul>
